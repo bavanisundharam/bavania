@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css" integrity="sha256-IvM9nJf/b5l2RoebiFno92E5ONttVyaEEsdemDC6iQA=" crossorigin="anonymous" />
+	<link 
+	rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>my dashboard</title>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-2 bg-primary position-fixed" style="height: 100vh">
+			<nav class="nav flex-column">
+  <a class="nav-link active" href="#" style="color: #fff">SB ADMIN2</a>
+  <a class="nav-link" href="#" style="color: #fff">Dashboard</a>
+  <a class="nav-link" href="#" style="color: #fff">INTERFACE</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff">Components</a>
+
+      <div class="dropdown-menu" style="width: 210px">
+      <a class="dropdown-item" href="#">CUSTOM COMPONENTS</a>
+      <a class="dropdown-item" href="#">Buttons</a>
+      <a class="dropdown-item" href="#">Cards</a>
+    </div>
+</nav>
+		</div>
+		<div class="col-10" style="margin-left: 220px">
+			<div class="row">
+			<div class="col-8 fixed-top" style="margin-left: 220px">
+	<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-light my-2 my-sm-0 bg-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+
+</div>
+
+  </form>
+</nav>
+<div class="col-4 fixed-top text-secondary bg-light" style="margin-left: 1000px">
+<i class="fa fa-bell" aria-hidden="true"></i>
+<i class="fa fa-envelope-o mx-4" aria-hidden="true"></i>
+<span class="border-right"></span>
+<strong class="mx-4">Bavani G</strong>
+<img src="https://i.ibb.co/PM1fsKX/present.jpg" style="width: 55px; height: 55px; border-radius: 50%">
+</div>
+</div>
+<div class="mn" style="margin-top: 70px">
+<div class="clearfix my-3">
+ <div class="card mb-3 float-left mx-3 shadow border border-primary border-right-0" style="max-width: 310px;">
+  <div class="row no-gutters">
+        <div class="col-8">
+      <div class="card-body">
+        <h6 class="card-title text-primary">EARNINGS(MONTHLY)</h6>
+        <p class="card-text"><strong>$40,000</strong></p>
+      </div>
+    </div>
+    <div class="col-4">
+      <i class="fa fa-minus-square my-5" style="font-size: 28px" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3 float-left mx-3 border border-primary border-right-0 border-left-0 shadow" style="max-width: 310px; border-width: 1">
+  <div class="row no-gutters">
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6 class="card-title text-primary">EARNINGS(MONTHLY)</h6>
+        <p class="card-text"><strong>$40,000</strong></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+      <i class="fa fa-minus-square my-5" style="font-size: 28px" aria-hidden="true"></i>
+
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3 float-left mx-3 border border-primary border-right-0 shadow border-left-0" style="max-width: 310px;">
+  <div class="row no-gutters">
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6 class="card-title text-primary">EARNINGS(MONTHLY)</h6>
+        <p class="card-text"><strong>$40,000</strong></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+      <i class="fa fa-minus-square my-5" style="font-size: 28px" aria-hidden="true"></i>
+
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3 float-left mx-3 border border-primary border-left-0 shadow" style="max-width: 310px;">
+  <div class="row no-gutters">
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6 class="card-title text-primary">EARNINGS(MONTHLY)</h6>
+        <p class="card-text"><strong>$40,000</strong></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <i class="fa fa-minus-square my-5" style="font-size: 28px" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <div style="width: 500px">
+<canvas id="myChart" width="400" height="400"></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha256-arMsf+3JJK2LoTGqxfnuJPFTU4hAK57MtIPdFpiHXOU=" crossorigin="anonymous"></script>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var scores='scores';
+var scores2='scores2';
+
+var runs=[120, 190, 32, 52, 22, 23];
+var runs2=[128, 167, 178, 67, 128, 133, 88];
+var charttype='bar';
+var myChart = new Chart(ctx, {
+    type: charttype,
+    data: {
+        labels: ['Bavani', 'abi', 'durga', 'madhu', 'esai', 'kavya'],
+        datasets: [{
+            label: scores,
+            data: runs,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+            ],
+            borderWidth: 1
+        },
+        {
+
+            label: scores2,
+            data: runs2,
+            backgroundColor: [
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+            ],
+            borderWidth: 1
+}]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <div style="width: 500px">
+<canvas id="Chart" width="400" height="400"></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha256-arMsf+3JJK2LoTGqxfnuJPFTU4hAK57MtIPdFpiHXOU=" crossorigin="anonymous"></script>
+<script>
+var ctx = document.getElementById('Chart').getContext('2d');
+var scores='scores';
+var scores2='scores2';
+
+var runs=[120, 190, 32, 52, 22, 23];
+var runs2=[128, 167, 178, 67, 128, 133, 88];
+var charttype='line';
+var myChart = new Chart(ctx, {
+    type: charttype,
+    data: {
+        labels: ['Bavani', 'abi', 'durga', 'madhu', 'esai', 'kavya'],
+        datasets: [{
+            label: scores,
+            data: runs,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+            ],
+            borderWidth: 1
+        },
+        {
+            label: scores2,
+            data: runs2,
+            backgroundColor: [
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+            ],
+            borderWidth: 1
+}]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 my-5">
+    <div class="card">
+      <div class="card-body">
+        <div style="width: 300px">
+<canvas id="pieChart" width="400" height="400"></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha256-arMsf+3JJK2LoTGqxfnuJPFTU4hAK57MtIPdFpiHXOU=" crossorigin="anonymous"></script>
+<script>
+var ctx = document.getElementById('pieChart').getContext('2d');
+var scores='scores';
+
+
+
+var runs=[128, 167, 178, 67, 128, 133];
+var charttype='pie';
+var myChart = new Chart(ctx, {
+    type: charttype,
+    data: {
+        labels: ['Bavani', 'abi', 'durga', 'madhu', 'esai', 'kavya'],
+        datasets: [{
+            label: scores,
+            data: runs,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 my-5">
+    <div class="card">
+      <div class="card-body">
+        <div style="width: 300px">
+<canvas id="doughtnutChart" width="400" height="400"></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha256-arMsf+3JJK2LoTGqxfnuJPFTU4hAK57MtIPdFpiHXOU=" crossorigin="anonymous"></script>
+<script>
+var ctx = document.getElementById('doughtnutChart').getContext('2d');
+var scores='scores';
+
+
+
+var runs=[128, 167, 178, 67, 128, 133];
+var charttype='doughnut';
+var myChart = new Chart(ctx, {
+    type: charttype,
+    data: {
+        labels: ['Bavani', 'abi', 'durga', 'madhu', 'esai', 'kavya'],
+        datasets: [{
+            label: scores,
+            data: runs,
+             backgroundColor: [
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+                'rgba(85, 254, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+                'rgba(85, 254, 132, 1)',
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
